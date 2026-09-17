@@ -1,75 +1,18 @@
-# Nuxt Minimal Starter
+# MealGo
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**MealGo** is a test full-stack project for online food ordering in a restaurant.
 
-## Setup
+### Tech Stack
 
-Make sure to install dependencies:
+* Vue 3
+* Nuxt
+* Firebase — authentication and data storage
+* WebSocket — real-time order updates
+* AWS S3 — image storage
+* SCSS
 
-```bash
-# npm
-npm install
+### Project Status
 
-# pnpm
-pnpm install
+**Test / Portfolio Project**
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project was created to practice Vue 3 and Nuxt development, Firebase integration, WebSocket communication, AWS S3, and multilingual application development.
