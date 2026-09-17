@@ -1,0 +1,36 @@
+@use './variables' as *;
+
+.notification {
+  background-color: rgb(130, 254, 199);
+  border: 2px solid var(--color-success);
+  border-radius: 16px 0 0 16px;
+  padding: 20px;
+  position: fixed;
+  top: 50px;
+  right: -400px;
+  z-index: 1001;
+  width: 260px;
+  text-align: center;
+  box-sizing: border-box;
+
+  &.open {
+    right: 0;
+  }
+   &.close {
+    right: -400px;
+  }
+  &.WARNING {
+    background-color: rgb(237, 242, 169);
+    border-color: var(--color-warning);
+    &:before {
+      content: '⚠️ '
+    }
+  }
+  &.ERROR {
+    background-color: rgb(226, 125, 125);
+    border-color: var(--color-error);
+    &:before {
+      content: '🚩 '
+    }
+  }
+}

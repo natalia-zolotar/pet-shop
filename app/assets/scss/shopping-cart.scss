@@ -1,0 +1,41 @@
+@use './variables' as *;
+
+.shopping-cart {
+  position: relative;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .icon {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-image: url('/shopping-cart.svg');
+    background-size: cover;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+
+  .count {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+  }
+}

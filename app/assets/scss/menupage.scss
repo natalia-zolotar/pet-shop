@@ -1,0 +1,231 @@
+@use './variables' as *;
+
+.menupage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #0b0b0b;
+  overflow: hidden;
+}
+
+.menu {
+  &__title {
+    text-align: center;
+
+    h1 {
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      text-transform: uppercase;
+      font-family: "Oswald", sans-serif;
+      font-weight: bold;
+      font-size: 60px;
+      letter-spacing: 4px;
+      padding-bottom: 16px;
+      margin-bottom: 40px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-size: cover;
+      }
+
+      &::before {
+        top: -5px;
+        right: -30px;
+        background-image: url('/menu-title-decot-t.webp');
+        width: 28px;
+        height: 29px;
+      }
+
+      &::after {
+        bottom: 0;
+        left: -20px;
+        background-image: url('/menu-title-decor-b.webp');
+        width: 229px;
+        height: 21px;
+      }
+    }
+  }
+
+  &__category {
+    h2 {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 28px;
+
+      &::after {
+        content: '';
+        width: 120px;
+        height: 3px;
+
+        background: linear-gradient(
+          90deg,
+          var(--color-primary),
+          rgba(254, 75, 27, 0)
+        );
+
+        clip-path: polygon(
+          0 0,
+          100% 35%,
+          100% 65%,
+          0 100%
+        );
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 24px;
+  }
+
+  &__card {
+    overflow: hidden;
+    background: rgba(white, 0.04);
+    border: 1px solid rgba(white, 0.08);
+    border-radius: 20px;
+    transition: .4s;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-primary-light);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      object-position: center;
+      transition: .4s;
+    }
+  }
+}
+
+.menu-card {
+  &__content {
+    padding: 20px;
+    color: white;
+
+    h3 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: rgba(white, 0.6);
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    span {
+      font-size: 20px;
+      line-height: 30px;
+      padding: 10px 0;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-secondary-light);
+    border-radius: 50%;
+    color: var(--color-secondary-light);
+    font-size: 40px;
+    line-height: 1;
+    user-select: none;
+    cursor: pointer;
+    transition: color .3s, border-color .3s;
+
+    &:hover {
+      color: white;
+      border-color: white;
+    }
+  }
+
+  &__order {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(white, 0.1);
+  }
+}
+
+@media (max-width: $laptop) {
+  .menu {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .menu {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .menu {
+    &__title {
+      h1 {
+        font-size: 40px;
+
+        &::after {
+          width: 170px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .menu {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+     &__category {
+      h2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@use './variables' as *;
+
+.order {
+  &-card {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 30px;
+    padding: 24px 24px 0;
+    border: 1px solid var(--color-gray-400);
+    border-radius: 16px;
+    margin-bottom: $space;
+
+    &__status {
+      margin-bottom: $space;
+    }
+  }
+
+  &-items {
+    li {
+      overflow: hidden;
+      position: relative;
+      padding: 4px 0 4px 12px;
+      margin-bottom: 5px;
+      font-size: 15px;
+      border-radius: 0 12px 12px 12px;
+      background: var(--color-secondary-lighter);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35px;
+        height: 25px;
+        border: solid var(--color-secondary-light);
+        border-width: 2px 0 0 2px;
+      }
+    }
+  }
+
+  &-total {
+    margin-bottom: $space;
+    display: block;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-gray-200);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-secondary);
+  }
+
+  &-actions {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: $space;
+
+    button, a {
+      margin: 0;
+    }
+  }
+}
+
+.order-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  color: var(--color-gray-400);
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 19px;
+    width: 1px;
+    height: 18px;
+    background: var(--color-gray-300);
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border: 2px solid var(--color-gray-400);
+    border-radius: 50%;
+    background: var(--color-bg);
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  &.active {
+    color: var(--color-text);
+
+    .order-step__dot {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+    }
+  }
+
+  &.current {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: $mobile-lg) {
+  .order {
+    &-card {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}

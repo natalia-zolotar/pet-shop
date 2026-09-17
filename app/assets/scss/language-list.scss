@@ -1,0 +1,30 @@
+.language-list {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+
+  li {
+    cursor: pointer;
+    font-family: "Oswald", sans-serif;
+    color: var(--color-secondary-light);
+
+    &:hover,
+    &.active {
+      color: var(--color-text);
+    }
+  }
+  
+  .homepage &,
+  .menupage & {
+    li {
+      color: white;
+
+      &:hover {
+        color: var(--color-primary-light);
+      }
+      &.active {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.category-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-weight: 600;
+      color: var(--color-gray-700);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,69 @@
+@use './variables' as *;
+
+.orders-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  width: 100%;
+  padding: 0 16px 24px;
+}
+
+.orders-column {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--color-gray-100);
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 17px;
+  }
+
+  &__list {
+    flex: 1;
+    min-height: 400px;
+  }
+}
+
+.order-board {
+  &__item {
+    margin-bottom: 12px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+  }
+}
+
+@media (max-width: $laptop) {
+  .orders-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .orders-column {
+    &__list {
+      min-height: 56px;
+    }
+  }
+}
+
+@media (max-width: $laptop-sm) {
+  .orders-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $mobile-lg) {
+  .orders-board {
+    grid-template-columns: 1fr;
+  }
+}
