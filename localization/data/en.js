@@ -5,7 +5,9 @@ export default {
     menu: 'Menu',
     howItWorks: 'How it works',
     contacts: 'Contact Us',
-    orders: 'My Orders'
+    orders: 'My Orders',
+    ordersBoard: 'Orders Board',
+    manageProducts: 'Manage Products'
   },
   menu: {
     shoppingCartIconAlt: 'Shopping cart icon',

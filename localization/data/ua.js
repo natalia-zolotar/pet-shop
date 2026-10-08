@@ -5,7 +5,9 @@ export default {
     menu: 'Меню',
     howItWorks: 'Як це працює',
     contacts: 'Контакты',
-    orders: 'Мої замовлення'
+    orders: 'Мої замовлення',
+    ordersBoard: 'Дошка замовлень',
+    manageProducts: 'Керування товарами'
   },
   menu: {
     shoppingCartIconAlt: 'Кошик',

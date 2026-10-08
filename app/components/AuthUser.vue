@@ -7,7 +7,12 @@ const route = useRoute()
 
 <template>
   <div class="auth-user">
-    <div v-if="user.isLogin">
+    <div v-if="user.isLogin" class="auth-user__inner">
+      <nav class="auth-user__nav">
+        <NuxtLink to="/manage-products">{{ t?.nav?.manageProducts }}</NuxtLink>
+        <NuxtLink to="/orders-board">{{ t?.nav?.ordersBoard }}</NuxtLink>
+      </nav>
+
       <span class="auth-user__name">
         {{ user.name }}
       </span>

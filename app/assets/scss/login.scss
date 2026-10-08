@@ -81,6 +81,27 @@
     padding-right: 20px;
     border-right: 1px solid var(--color-gray-500);
 
+    &__inner {
+      display: flex;
+      align-items: center;
+    }
+
+    &__nav {
+      display: flex;
+      margin-right: 50px;
+      gap: 20px;
+      font-size: 13px;
+
+      a {
+        color: var(--color-secondary-light);
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
     &__name {
       margin-right: 8px;
     }
@@ -94,6 +115,27 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .auth {
+    &-user {
+      &__inner {
+        align-items: flex-start;
+        justify-content: flex-end;
+        text-align: right;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      &__nav {
+        justify-content: flex-end;
+        margin-right: 0;
+        gap: 12px;
+        width: 100%;
       }
     }
   }
